@@ -9,6 +9,7 @@ RUN apt-get update \
    python3-cryptography \
    software-properties-common \
    rsyslog systemd systemd-cron sudo iproute2 \
+   build-essential libssl-dev libffi-dev python3-dev \
   && rm -Rf /var/lib/apt/lists/* \
   && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
   && apt-get clean

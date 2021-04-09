@@ -9,6 +9,7 @@ RUN apt-get update \
      python-openssl \
      python-wheel \
      wget rsyslog systemd systemd-cron sudo iproute2 python-pip\
+     build-essential libssl-dev libffi-dev python-dev \
   && rm -Rf /var/lib/apt/lists/* \
   && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
   && apt-get clean
