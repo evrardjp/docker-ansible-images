@@ -15,7 +15,8 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 RUN yum -y install rpm centos-release \
   && yum -y update \
   && yum -y install epel-release initscripts sudo which hostname \
-    python3 python3-pip python3-cryptography gcc libffi-devel openssl-devel
+    python3 python3-pip gcc libffi-devel openssl-devel \
+  && pip3 install -U pip wheel
 
 RUN pip3 install ansible
 
