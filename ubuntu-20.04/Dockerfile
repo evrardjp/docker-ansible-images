@@ -1,15 +1,15 @@
 FROM ubuntu:20.04
 
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends \
+  &&  DEBIAN_FRONTEND=noninteractive apt-get install -y -q --no-install-recommends \
    apt-utils \
    locales \
    python3-setuptools \
    python3-pip \
-   python3-cryptography \
    software-properties-common \
    rsyslog systemd systemd-cron sudo iproute2 \
    build-essential libssl-dev libffi-dev python3-dev \
+  && pip3 install -U pip wheel \
   && rm -Rf /var/lib/apt/lists/* \
   && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
   && apt-get clean
