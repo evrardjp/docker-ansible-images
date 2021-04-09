@@ -14,8 +14,8 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN yum makecache fast \
   && yum -y install deltarpm epel-release initscripts \
-  && yum -y update && yum -y install sudo which gcc libffi-devel python-devel openssl-devel python-pip python-cryptography \
-  && yum clean all
+  && yum -y update && yum -y install sudo which gcc libffi-devel python3-devel openssl-devel python3-pip \
+  && yum clean all && pip3 install -U pip wheel
 
 RUN pip install ansible
 
