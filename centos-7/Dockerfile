@@ -1,5 +1,5 @@
 FROM centos:7
-ENV container=docker
+ENV container docker
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN yum -y update; yum clean all; \
@@ -27,4 +27,4 @@ RUN mkdir -p /etc/ansible
 RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
 
 VOLUME ["/sys/fs/cgroup"]
-CMD ["/usr/lib/systemd/systemd"]
+CMD ["/sbin/init"]
